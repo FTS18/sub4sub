@@ -1,17 +1,24 @@
 {
   "expo": {
-    "name": "sub4sub-app",
+    "name": "Sub4Sub",
     "slug": "sub4sub-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "scheme": "sub4sub",
     "userInterfaceStyle": "light",
+    "backgroundColor": "#F5EFE2",
+    "splash": {
+      "backgroundColor": "#F5EFE2"
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.sub4sub.app"
     },
     "android": {
+      "package": "com.sub4sub.app",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#F5EFE2",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -19,7 +26,20 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-3940256099942544~3347511713",
+          "iosAppId": "ca-app-pub-3940256099942544~1458002511"
+        }
+      ],
+      "@react-native-google-signin/google-signin",
+      "expo-mail-composer"
+    ]
   }
 }
